@@ -188,10 +188,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Right: photo ── */}
+          {/* ── Right: photo — desktop only ── */}
           <div
-            className="hero-photo"
-            style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}
+            className="hero-photo hidden md:flex"
+            style={{ justifyContent: 'flex-end', alignItems: 'center' }}
           >
             <div style={{ position: 'relative', width: '100%', maxWidth: 'clamp(200px, 22vw, 360px)' }}>
               <img
