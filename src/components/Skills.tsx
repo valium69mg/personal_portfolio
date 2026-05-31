@@ -45,7 +45,7 @@ const skillGroups: SkillGroup[] = [
     category: 'Infrastructure',
     skills: [
       { name: 'Docker',     logo: `${D}/docker/docker-original.svg` },
-      { name: 'AWS ECS',    logo: `${D}/amazonwebservices/amazonwebservices-original.svg` },
+      { name: 'AWS',        logo: `${D}/amazonwebservices/amazonwebservices-original.svg` },
       { name: 'Kubernetes', logo: `${D}/kubernetes/kubernetes-original.svg` },
       { name: 'Terraform',  logo: `${D}/terraform/terraform-original.svg` },
     ],
@@ -85,7 +85,7 @@ export default function Skills() {
       id="skills"
       style={{ borderTop: '1px solid var(--color-border)' }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'var(--spacing-section) 1.5rem' }}>
+      <div className="section-inner">
 
         <p style={{
           fontSize: '0.8125rem',

@@ -50,7 +50,7 @@ export default function Nav() {
         transition: 'background-color 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '1.125rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ maxWidth: 'var(--content-max)', margin: '0 auto', padding: '1.125rem clamp(1.25rem, 3vw, 2.5rem)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <a href="#hero" style={{ fontWeight: 700, fontSize: '1rem', letterSpacing: '-0.03em', color: 'var(--color-text)' }}>
           CR
         </a>

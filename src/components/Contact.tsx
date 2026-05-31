@@ -30,7 +30,7 @@ export default function Contact() {
       id="contact"
       style={{ borderTop: '1px solid var(--color-border)' }}
     >
-      <div ref={ref} style={{ maxWidth: '1280px', margin: '0 auto', padding: 'var(--spacing-section) 1.5rem' }}>
+      <div ref={ref} className="section-inner">
 
         <p style={{
           fontSize: '0.8125rem',

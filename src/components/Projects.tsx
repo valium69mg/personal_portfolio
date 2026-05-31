@@ -78,7 +78,7 @@ export default function Projects() {
       id="projects"
       style={{ borderTop: '1px solid var(--color-border)' }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: 'var(--spacing-section) 1.5rem' }}>
+      <div className="section-inner">
 
         <p style={{
           fontSize: '0.8125rem',
