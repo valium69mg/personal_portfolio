@@ -76,22 +76,56 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Name */}
-            <h1
+            {/* Name + mobile photo */}
+            <div
               className="hero-name"
               style={{
-                fontSize: 'var(--type-giant)',
-                fontWeight: 900,
-                letterSpacing: '-0.05em',
-                lineHeight: 0.88,
-                color: 'var(--color-text)',
+                display: 'flex',
+                alignItems: 'flex-start',
+                justifyContent: 'space-between',
+                gap: '1rem',
                 marginBottom: 'clamp(1.25rem, 3vw, 2rem)',
               }}
             >
-              Carlos
-              <br />
-              Román
-            </h1>
+              <h1
+                style={{
+                  fontSize: 'var(--type-giant)',
+                  fontWeight: 900,
+                  letterSpacing: '-0.05em',
+                  lineHeight: 0.88,
+                  color: 'var(--color-text)',
+                }}
+              >
+                Carlos
+                <br />
+                Román
+              </h1>
+
+              {/* Small photo — mobile only */}
+              <div className="md:hidden" style={{ flexShrink: 0, position: 'relative' }}>
+                <img
+                  src="/carlos.webp"
+                  alt="Carlos Román"
+                  width={80}
+                  height={90}
+                  style={{
+                    width: '72px',
+                    height: '80px',
+                    objectFit: 'cover',
+                    objectPosition: 'center 12%',
+                    display: 'block',
+                    border: '1px solid var(--color-border)',
+                  }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '-5px', right: '-5px',
+                  width: '18px', height: '18px',
+                  border: '1.5px solid var(--color-accent)',
+                  zIndex: -1,
+                }} />
+              </div>
+            </div>
 
             {/* Description */}
             <p
