@@ -107,7 +107,7 @@ export default function Nav() {
           style={{
             background: 'none', border: 'none',
             color: 'var(--color-text)', cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            alignItems: 'center', justifyContent: 'center',
             minWidth: '44px', minHeight: '44px',
           }}
         >
