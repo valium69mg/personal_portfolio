@@ -45,7 +45,7 @@ const skillGroups: SkillGroup[] = [
     category: 'Infrastructure',
     skills: [
       { name: 'Docker',     logo: `${D}/docker/docker-original.svg` },
-      { name: 'AWS',        logo: `${D}/amazonwebservices/amazonwebservices-original.svg` },
+      { name: 'AWS',        logo: 'https://cdn.simpleicons.org/amazonaws/FF9900' },
       { name: 'Kubernetes', logo: `${D}/kubernetes/kubernetes-original.svg` },
       { name: 'Terraform',  logo: `${D}/terraform/terraform-original.svg` },
     ],
