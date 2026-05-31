@@ -10,11 +10,43 @@ export default function Hero() {
         flexDirection: 'column',
         justifyContent: 'center',
         paddingTop: '5rem',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      {/* ── Glow blobs ── */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+        <div
+          className="glow-blob-1"
+          style={{
+            position: 'absolute',
+            width: 'clamp(320px, 45vw, 650px)',
+            height: 'clamp(320px, 45vw, 650px)',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #2563eb 0%, transparent 70%)',
+            opacity: 0.13,
+            top: '-15%',
+            left: '-8%',
+          }}
+        />
+        <div
+          className="glow-blob-2"
+          style={{
+            position: 'absolute',
+            width: 'clamp(220px, 32vw, 480px)',
+            height: 'clamp(220px, 32vw, 480px)',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #1d4ed8 0%, transparent 70%)',
+            opacity: 0.09,
+            bottom: '5%',
+            right: '-5%',
+          }}
+        />
+      </div>
+
       <div
         className="section-inner"
-        style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center' }}
+        style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center', position: 'relative', zIndex: 1 }}
       >
         <div className="hero-grid">
           {/* ── Left: text content ── */}
