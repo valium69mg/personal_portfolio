@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Open to new roles",
+    "role": "Backend Developer · Querétaro, MX",
+    "desc1": "Building high-availability microservices and distributed systems. Production systems serving",
+    "users": "15K+ daily users",
+    "desc2": "and processing",
+    "records": "100K+ records/min",
+    "viewProjects": "View Projects",
+    "contact": "Contact Me",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "label": "About",
+    "title1": "Backend engineer",
+    "title2": "by craft.",
+    "bio1": "Backend Developer with 3+ years building high-availability microservices and distributed systems. My work spans mission-critical infrastructure in public safety, industrial access control, and toll highway management.",
+    "bio2": "Mechatronics Engineer from Tecnológico de Monterrey — I bring a hardware-meets-software mindset to every system I design. Focused on clean architecture, automated testing, CI/CD pipelines, and AI/ML integration.",
+    "tagLocation": "Querétaro, MX",
+    "tagEnglish": "C1 English",
+    "tagSpanish": "Native Spanish",
+    "stats": {
+      "years": "Years of experience",
+      "users": "Daily active users",
+      "records": "Records per minute",
+      "systems": "Production systems"
+    }
+  },
+  "skills": {
+    "label": "Technical Skills",
+    "title1": "The stack",
+    "title2": "I work with.",
+    "categories": {
+      "languages": "Languages",
+      "databases": "Databases",
+      "messaging": "Messaging",
+      "security": "Security",
+      "infrastructure": "Infrastructure",
+      "cicd": "CI / CD",
+      "testing": "Testing",
+      "aiml": "AI / ML"
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title1": "Systems in",
+    "title2": "production.",
+    "items": [
+      {
+        "title": "Police Intelligence Platform",
+        "company": "IBL / iEntry",
+        "period": "2023 – Present",
+        "description": "Backend for a police intelligence system processing hundreds of thousands of phone records per minute to detect criminal patterns in real time.",
+        "highlights": [
+          "Java/Spring Boot microservices on AWS ECS with Docker",
+          "Asynchronous inter-service communication via RabbitMQ",
+          "Real-time push notifications via WebSockets in Node.js",
+          "AI/ML modules (HuggingFace, Scikit-learn) for criminal pattern detection",
+          "Geospatial visualization of criminal activity data",
+          "Infrastructure versioned with Terraform"
+        ]
+      },
+      {
+        "title": "Toll Alarm & SOS Infrastructure",
+        "company": "IBL / iEntry",
+        "period": "2023 – Present",
+        "description": "Mission-critical alarm distribution system for toll highway infrastructure serving 15,000+ daily users — routing real-time alerts from cameras, SOS poles, and panic buttons.",
+        "highlights": [
+          "RabbitMQ message broker + WebSockets for low-latency alert delivery",
+          "Clean Architecture in Java/Spring Boot + SQL Server",
+          "Full CI/CD pipeline: Jenkins, SonarQube, BitBucket",
+          "Observability with Prometheus + Grafana"
+        ]
+      },
+      {
+        "title": "Industrial Access Control",
+        "company": "IBL / iEntry",
+        "period": "2023 – Present",
+        "description": "High-concurrency access control system for hundreds of daily employees at an industrial plant, with real-time control of physical access devices.",
+        "highlights": [
+          "Java/Spring Boot REST API with SQLite for high-concurrency read/write",
+          "Python/FastAPI microservice controlling a Raspberry Pi",
+          "Real-time operation of physical turnstiles and barriers"
+        ]
+      },
+      {
+        "title": "E-Commerce Platform",
+        "company": "Freelance",
+        "period": "Jun – Sep 2023",
+        "description": "Full e-commerce platform built end-to-end — from requirements gathering to production deployment — for a technology company.",
+        "highlights": [
+          "Product catalog, shopping cart, and order management",
+          "Payment gateway integration",
+          "React frontend + Node.js REST backend",
+          "Delivered independently, fully production-ready"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title1": "Let's build",
+    "title2": "something.",
+    "description": "Available for backend engineering roles and interesting distributed systems challenges. C1 English — comfortable in international teams.",
+    "footer": "Querétaro, Mexico · C1 English"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Disponible para nuevas oportunidades",
+    "role": "Backend Developer · Querétaro, MX",
+    "desc1": "Construyendo microservicios de alta disponibilidad y sistemas distribuidos. Sistemas en producción atendiendo",
+    "users": "15K+ usuarios diarios",
+    "desc2": "y procesando",
+    "records": "100K+ registros/min",
+    "viewProjects": "Ver Proyectos",
+    "contact": "Contáctame",
+    "scroll": "Desplázate para explorar"
+  },
+  "about": {
+    "label": "Sobre mí",
+    "title1": "Ingeniero backend",
+    "title2": "por vocación.",
+    "bio1": "Backend Developer con 3+ años construyendo microservicios de alta disponibilidad y sistemas distribuidos. Mi trabajo abarca infraestructura crítica en seguridad pública, control de acceso industrial y gestión de autopistas de peaje.",
+    "bio2": "Ingeniero en Mecatrónica por el Tecnológico de Monterrey — aporto una visión hardware-software a cada sistema que diseño. Enfocado en arquitectura limpia, pruebas automatizadas, pipelines CI/CD e integración de IA/ML.",
+    "tagLocation": "Querétaro, MX",
+    "tagEnglish": "Inglés C1",
+    "tagSpanish": "Español Nativo",
+    "stats": {
+      "years": "Años de experiencia",
+      "users": "Usuarios activos diarios",
+      "records": "Registros por minuto",
+      "systems": "Sistemas en producción"
+    }
+  },
+  "skills": {
+    "label": "Habilidades Técnicas",
+    "title1": "El stack",
+    "title2": "con el que trabajo.",
+    "categories": {
+      "languages": "Lenguajes",
+      "databases": "Bases de Datos",
+      "messaging": "Mensajería",
+      "security": "Seguridad",
+      "infrastructure": "Infraestructura",
+      "cicd": "CI / CD",
+      "testing": "Pruebas",
+      "aiml": "IA / ML"
+    }
+  },
+  "projects": {
+    "label": "Proyectos",
+    "title1": "Sistemas en",
+    "title2": "producción.",
+    "items": [
+      {
+        "title": "Plataforma de Inteligencia Policial",
+        "company": "IBL / iEntry",
+        "period": "2023 – Presente",
+        "description": "Backend para un sistema de inteligencia policial que procesa cientos de miles de registros telefónicos por minuto para detectar patrones criminales en tiempo real.",
+        "highlights": [
+          "Microservicios Java/Spring Boot en AWS ECS con Docker",
+          "Comunicación asíncrona entre servicios vía RabbitMQ",
+          "Notificaciones en tiempo real con WebSockets en Node.js",
+          "Módulos IA/ML (HuggingFace, Scikit-learn) para detección de patrones criminales",
+          "Visualización geoespacial de actividad criminal",
+          "Infraestructura versionada con Terraform"
+        ]
+      },
+      {
+        "title": "Infraestructura de Alarmas y SOS en Telepeaje",
+        "company": "IBL / iEntry",
+        "period": "2023 – Presente",
+        "description": "Sistema de distribución de alarmas de misión crítica para autopistas de peaje con 15,000+ usuarios diarios — enrutando alertas en tiempo real desde cámaras, postes SOS y botones de pánico.",
+        "highlights": [
+          "Broker RabbitMQ + WebSockets para entrega de alertas de baja latencia",
+          "Arquitectura Limpia en Java/Spring Boot + SQL Server",
+          "Pipeline CI/CD completo: Jenkins, SonarQube, BitBucket",
+          "Observabilidad con Prometheus + Grafana"
+        ]
+      },
+      {
+        "title": "Control de Acceso Industrial",
+        "company": "IBL / iEntry",
+        "period": "2023 – Presente",
+        "description": "Sistema de control de acceso de alta concurrencia para cientos de empleados diarios en planta industrial, con control en tiempo real de dispositivos físicos de acceso.",
+        "highlights": [
+          "API REST Java/Spring Boot con SQLite para alta concurrencia",
+          "Microservicio Python/FastAPI controlando una Raspberry Pi",
+          "Operación en tiempo real de torniquetes y barreras físicas"
+        ]
+      },
+      {
+        "title": "Plataforma de Comercio Electrónico",
+        "company": "Freelance",
+        "period": "Jun – Sep 2023",
+        "description": "Plataforma de e-commerce completa de punta a punta — desde el levantamiento de requerimientos hasta el despliegue — para una empresa de tecnología.",
+        "highlights": [
+          "Catálogo de productos, carrito de compras y gestión de pedidos",
+          "Integración de pasarela de pago",
+          "Frontend React + backend REST Node.js",
+          "Entregado de forma independiente, listo para producción"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contacto",
+    "title1": "Construyamos",
+    "title2": "algo juntos.",
+    "description": "Disponible para roles de ingeniería backend y desafíos interesantes de sistemas distribuidos. Inglés C1 — cómodo trabajando en equipos internacionales.",
+    "footer": "Querétaro, México · Inglés C1"
+  }
+}

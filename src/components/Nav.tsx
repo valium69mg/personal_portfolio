@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const LINKS = [
-  { label: 'Home',     id: 'hero' },
-  { label: 'About',    id: 'about' },
-  { label: 'Skills',   id: 'skills' },
-  { label: 'Projects', id: 'projects' },
-  { label: 'Contact',  id: 'contact' },
+  { key: 'home',     id: 'hero' },
+  { key: 'about',    id: 'about' },
+  { key: 'skills',   id: 'skills' },
+  { key: 'projects', id: 'projects' },
+  { key: 'contact',  id: 'contact' },
 ];
 
 export default function Nav() {
-  const [open, setOpen]       = useState(false);
-  const [active, setActive]   = useState('hero');
+  const { t, i18n } = useTranslation();
+  const [open, setOpen]         = useState(false);
+  const [active, setActive]     = useState('hero');
   const [scrolled, setScrolled] = useState(false);
 
-  // Scroll-position based active detection — reliable for all section heights
+  const currentLang = i18n.language === 'en' ? 'en' : 'es';
+
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-
       const trigger = window.scrollY + window.innerHeight * 0.35;
       let current = 'hero';
       for (const { id } of LINKS) {
@@ -27,8 +29,7 @@ export default function Nav() {
       }
       setActive(current);
     };
-
-    onScroll(); // run once on mount
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -64,39 +65,65 @@ export default function Nav() {
           CR
         </a>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex" style={{ gap: '2rem', listStyle: 'none', alignItems: 'center' }}>
-          {LINKS.map(({ label, id }) => {
-            const isActive = active === id;
-            return (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  style={{
-                    fontSize: '0.875rem',
-                    fontWeight: isActive ? 600 : 400,
-                    color: isActive ? 'var(--color-text)' : 'var(--color-text-secondary)',
-                    transition: 'color 200ms ease',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    paddingBottom: '2px',
-                  }}
-                  onMouseEnter={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--color-text)'; }}
-                  onMouseLeave={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--color-text-secondary)'; }}
-                >
-                  {label}
-                  <span style={{
-                    position: 'absolute', bottom: '-2px', left: 0, right: 0,
-                    height: '1px', backgroundColor: 'var(--color-accent)',
-                    transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
-                    transition: 'transform 250ms ease',
-                    transformOrigin: 'left',
-                  }} />
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        {/* Desktop links + lang toggle */}
+        <div className="hidden md:flex" style={{ alignItems: 'center', gap: '0' }}>
+          <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', alignItems: 'center' }}>
+            {LINKS.map(({ key, id }) => {
+              const isActive = active === id;
+              return (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    style={{
+                      fontSize: '0.875rem',
+                      fontWeight: isActive ? 600 : 400,
+                      color: isActive ? 'var(--color-text)' : 'var(--color-text-secondary)',
+                      transition: 'color 200ms ease',
+                      cursor: 'pointer',
+                      position: 'relative',
+                      paddingBottom: '2px',
+                    }}
+                    onMouseEnter={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--color-text)'; }}
+                    onMouseLeave={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.color = 'var(--color-text-secondary)'; }}
+                  >
+                    {t(`nav.${key}`)}
+                    <span style={{
+                      position: 'absolute', bottom: '-2px', left: 0, right: 0,
+                      height: '1px', backgroundColor: 'var(--color-accent)',
+                      transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
+                      transition: 'transform 250ms ease', transformOrigin: 'left',
+                    }} />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Lang toggle */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: '0.125rem',
+            marginLeft: '1.5rem', paddingLeft: '1.5rem',
+            borderLeft: '1px solid var(--color-border)',
+          }}>
+            {(['es', 'en'] as const).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => i18n.changeLanguage(lang)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  fontSize: '0.8rem', fontWeight: currentLang === lang ? 700 : 400,
+                  color: currentLang === lang ? 'var(--color-text)' : 'var(--color-text-secondary)',
+                  padding: '0.25rem 0.4rem', letterSpacing: '0.06em',
+                  transition: 'color 200ms ease',
+                  minHeight: '44px',
+                }}
+                aria-label={`Switch to ${lang === 'es' ? 'Spanish' : 'English'}`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* Hamburger */}
         <button
@@ -121,7 +148,7 @@ export default function Nav() {
           borderTop: '1px solid var(--color-border)',
           backgroundColor: 'rgba(10,10,10,0.97)',
         }}>
-          {LINKS.map(({ label, id }) => (
+          {LINKS.map(({ key, id }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -137,9 +164,31 @@ export default function Nav() {
                 transition: 'color 150ms ease',
               }}
             >
-              {label}
+              {t(`nav.${key}`)}
             </a>
           ))}
+
+          {/* Lang toggle — mobile */}
+          <div style={{
+            display: 'flex', gap: '0', padding: '1rem clamp(1.25rem, 3vw, 2.5rem)',
+          }}>
+            {(['es', 'en'] as const).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => { i18n.changeLanguage(lang); setOpen(false); }}
+                style={{
+                  background: currentLang === lang ? 'var(--color-surface-2)' : 'none',
+                  border: '1px solid var(--color-border)',
+                  cursor: 'pointer', color: 'var(--color-text)',
+                  fontSize: '0.875rem', fontWeight: currentLang === lang ? 700 : 400,
+                  padding: '0.5rem 1rem', transition: 'background 200ms ease',
+                  marginRight: '-1px',
+                }}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </nav>
